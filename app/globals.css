@@ -42,11 +42,13 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-green-1: #0FB563;
+  --color-dark-2: #202028;
+  --color-dark-1: #21242B;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: #21242B;
+  --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
