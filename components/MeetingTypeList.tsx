@@ -4,12 +4,16 @@ import { Calendar, Plus, User, Video } from "lucide-react";
 import MeetingCard from "./MeetingCard";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import MeetingModal from "./MeetingModal";
 
 const MeetingTypeList = () => {
   const router = useRouter();
   const [meetingState, setMeetingState] = useState<
     "isJoiningMeeting" | "isInstantMeeting" | "isSchedulingMeeting" | undefined
   >();
+
+    const createMeeting = ()=>{};
+    
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
       <MeetingCard
@@ -24,7 +28,7 @@ const MeetingTypeList = () => {
         icon={User}
         iconbg="bg-green-500"
         title="Join Meeting"
-        desc="via invitation link"
+        desc="Via invitation link"
         handleClick={() => setMeetingState("isJoiningMeeting")}
         className="bg-green-500/80"
       />
@@ -43,6 +47,14 @@ const MeetingTypeList = () => {
         desc="Meeting recordings"
         handleClick={() => router.push("/recordings")}
         className="bg-blue-500/80"
+      />
+      <MeetingModal
+        isOpen={meetingState === "isInstantMeeting"}
+        onClose={() => setMeetingState(undefined)}
+        title="Start an instant meeting"
+        buttonText="Start Meeting"
+        className="text-center"
+        handleClick={createMeeting}
       />
     </section>
   );
