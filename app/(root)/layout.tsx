@@ -1,5 +1,14 @@
 import StreamVideoProvider from "@/providers/StreamClientProvider";
+import { Metadata } from "next";
 import { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "FaceLink",
+  description: "A Video Conference web application",
+  icons: {
+    icon: "/logo.png",
+  },
+};
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
