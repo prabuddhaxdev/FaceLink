@@ -5,6 +5,9 @@ import MeetingCard from "./MeetingCard";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import MeetingModal from "./MeetingModal";
+import { toast } from "sonner";
+import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
+import { useUser } from "@clerk/nextjs";
 
 const MeetingTypeList = () => {
   const router = useRouter();
@@ -12,8 +15,58 @@ const MeetingTypeList = () => {
     "isJoiningMeeting" | "isInstantMeeting" | "isSchedulingMeeting" | undefined
   >();
 
-    const createMeeting = ()=>{};
-    
+    const [values, setValues] = useState({
+      dateTime: new Date(),
+      description: "",
+      link: "",
+    });
+    const [callDetails, setCallDetails] = useState<Call>();
+
+    const { user } = useUser();
+    const client = useStreamVideoClient();
+
+    const createMeeting = async () => {
+      if (!user || !client) return;
+
+      try {
+        if(!values.dateTime){
+          toast.error("Please select a date and time")
+          return;
+        }
+        const callId = crypto.randomUUID();
+
+        const call = client.call("default", callId);
+
+        if (!call) throw new Error("Failed to create call");
+
+        const startsAt =
+          values.dateTime.toISOString() || new Date(Date.now()).toISOString();
+
+        const description = values.description || "Instant meeting";
+
+        await call.getOrCreate({
+          data: {
+            starts_at: startsAt,
+            custom: {
+              description,
+            },
+          },
+        });
+
+        setCallDetails(call);
+
+        if (!values.description) {
+          router.push(`/meeting/${callId}`);
+        }
+
+        toast.success("Meeting created successfully!");
+      } catch (error) {
+        toast.error("error.message");
+      }
+    };
+
+    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`;
+
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
       <MeetingCard
