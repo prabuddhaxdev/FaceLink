@@ -1,4 +1,5 @@
 import MeetingTypeList from "@/components/MeetingTypeList";
+import UpcomingMeeting from "@/components/UpcomingMeetingDate";
 
 const HomePage = () => {
   const now = new Date();
@@ -20,7 +21,7 @@ const HomePage = () => {
         style={{ backgroundImage: "url('/banner.png')" }}
       >
         <article className="flex flex-col h-full justify-between max-md:px-5 max-md:py-8 lg:p-11">
-          {/* <UpcomingMeetingDate /> */}
+          <UpcomingMeeting />
           <span className="flex flex-col gap-2">
             <h1 className="text-3xl lg:text-5xl font-bold">{formattedTime}</h1>
             <p className="text-lg font-medium lg:text-xl text-gray-300">
