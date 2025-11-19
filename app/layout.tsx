@@ -10,7 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FaceLink",
-  description: "Video Conference web application",
+  description: "Video Conferencing web application",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
