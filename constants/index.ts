@@ -28,7 +28,7 @@ export const sidebarLinks = [
     label: "Recordings",
   },
   {
-    route: "/personal-room",
+    route: "/my-rooms",
     icon: Plus,
     label: "Personal Room",
   },
