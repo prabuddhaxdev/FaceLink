@@ -65,7 +65,7 @@ const MeetingRoom = () => {
           <CallControls
             onLeave={() => {
               router.push("/");
-              toast.success("you have left from the meeting!");
+              toast.success("You have left from the meeting!");
             }}
           />
 
