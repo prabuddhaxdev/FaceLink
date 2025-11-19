@@ -1,8 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import MeetingTypeList from "@/components/MeetingTypeList";
 import UpcomingMeeting from "@/components/UpcomingMeetingDate";
 
 const HomePage = () => {
-  const now = new Date();
+  const [now] = useState(() => new Date()); // Initialize once on the client
 
   const formattedTime = now.toLocaleTimeString("en-US", {
     hour: "2-digit",
@@ -10,12 +13,12 @@ const HomePage = () => {
     hour12: true,
   });
 
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
+  const formattedDate = now.toLocaleDateString("en-US", {
     dateStyle: "full",
-  }).format(now);
+  });
 
   return (
-    <section className="size-full flex flex-col gap-10  text-white">
+    <section className="size-full flex flex-col gap-10 text-white">
       <div
         className="w-full h-72 rounded-xl bg-cover"
         style={{ backgroundImage: "url('/banner.png')" }}
