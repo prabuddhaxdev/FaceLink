@@ -1,5 +1,8 @@
 # FaceLink
 
+<img width="1258" height="634" alt="facelink" src="https://github.com/user-attachments/assets/3bacceef-b409-4e23-a504-6e69195a1cee" />
+
+
 ##  🚀 Overview
 **FaceLink** is a feature-rich video conferencing platform built for seamless and secure collaboration. It allows users to create and join meetings with real-time interactions such as screen sharing, recording, and participant management. Designed with a modern interface and robust authentication, FaceLink ensures privacy, scalability, and a smooth user experience across all devices.
 
@@ -55,10 +58,4 @@
 ---
 
 ## 🛠️ Tech Stack
-- **Next.js**
-- **React**
-- **TypeScript**
-- **Clerk Authentication**
-- **Tailwind CSS**
-- **Stream SDK**
-- **Shadcn/UI**
+- **Next.js** • **React** • **TypeScript** • **Clerk Authentication** • **Stream SDK** •  **Tailwind CSS** • **Shadcn/UI**
