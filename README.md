@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FaceLink
 
-## Getting Started
+##  🚀 Overview
+**FaceLink** is a feature-rich video conferencing platform built for seamless and secure collaboration. It allows users to create and join meetings with real-time interactions such as screen sharing, recording, and participant management. Designed with a modern interface and robust authentication, FaceLink ensures privacy, scalability, and a smooth user experience across all devices.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔐 Authentication
+- Secure login using multiple authentication methods  
+- Manage and update user profile information  
+- Role-based access control for hosts, participants, and administrators  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎥 New Meetings
+- Start instant meetings with a single click  
+- Unique meeting IDs are generated for enhanced privacy  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🎛️ Meeting Controls
+- Meeting recording  
+- Emoji reactions 😄🔥👏  
+- Screen sharing 🖥️  
+- Mute/unmute audio 🎙️  
+- Sound controls  
+- Grid layout and participant list views  
+- Individual participant management:
+  - Pin participants 📌  
+  - Mute/unmute users  
+  - Block participants 🚫  
+  - Allow or restrict video sharing  
 
-## Learn More
+### 📅 Schedule Future Meetings
+- Schedule meetings by selecting date and time  
+- View upcoming meetings in a dedicated section  
+- Share meeting links or start meetings instantly  
 
-To learn more about Next.js, take a look at the following resources:
+### 🕒 Past Meetings List
+- View a complete list of past meetings with timestamps  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📼 View Recorded Meetings
+- Access and replay recorded meetings for review and reference  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🏠 Personal Room
+- Personal meeting room with a unique, shareable meeting link  
 
-## Deploy on Vercel
+### 🔗 Join Meetings via Link
+- Join meetings instantly using a shared meeting link  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔒 Secure Real-time Functionality
+- Real-time interactions with strong security and data integrity  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📱 Responsive Design
+- Seamless experience across desktops, tablets, and smartphones  
+
+---
+
+## 🛠️ Tech Stack
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Clerk Authentication**
+- **Tailwind CSS**
+- **Stream SDK**
+- **Shadcn/UI**
