@@ -111,4 +111,11 @@ Designed structured meeting schemas and status-based logic. Implemented clear li
 - Implement AI-powered meeting transcription.
 - Add rate limiting and abuse detection.
 
+---
+
+## 💡 Why FaceLink?
+
+Because meetings should be simple, secure, and seamless.
+
+FaceLink removes friction from virtual collaboration with real-time performance, strong authentication, and intuitive controls — so teams can focus on conversations, not complications.
 
