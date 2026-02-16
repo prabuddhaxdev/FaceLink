@@ -59,3 +59,56 @@
 
 ## 🛠️ Tech Stack
 - **Next.js** • **React** • **TypeScript** • **Clerk Authentication** • **Stream SDK** •  **Tailwind CSS** • **Shadcn/UI**
+
+---  
+
+## 🧩 Technical Challenges & Solutions
+
+### 1️⃣ Real-Time State Synchronization
+
+**Challenge:**  
+Managing real-time participant states (mute, video toggle, screen share, reactions) across multiple users without UI lag or inconsistencies.
+
+**Solution:**  
+Leveraged Stream SDK’s event-driven architecture and WebSocket-based real-time updates. Implemented proper state subscriptions and cleanup in React lifecycle hooks to prevent memory leaks and stale state issues.
+
+
+
+### 2️⃣ Role-Based Access Control (RBAC)
+
+**Challenge:**  
+Ensuring that only hosts could perform privileged actions like muting others, blocking users, or ending meetings.
+
+**Solution:**  
+Integrated Clerk authentication with role metadata and enforced role validation both on the frontend UI level and backend logic. Sensitive actions are conditionally rendered and validated before execution.
+
+
+
+### 3️⃣ Handling Meeting Lifecycle & Persistence
+
+**Challenge:**  
+Managing meeting states (scheduled, live, completed, recorded) while maintaining accurate history and recordings.
+
+**Solution:**  
+Designed structured meeting schemas and status-based logic. Implemented clear lifecycle transitions (Scheduled → Live → Completed → Recorded) and synced them with Stream APIs for consistency.
+
+
+---
+
+## ⚖️ Engineering Tradeoffs
+
+- Chose Stream SDK over building custom WebRTC infrastructure to accelerate development and focus on product experience.
+- Used Clerk instead of custom JWT implementation to ensure security best practices.
+- Prioritized modular UI components to maintain scalability over rapid prototyping shortcuts.
+
+
+---
+
+## 🚀 Future Scalability Improvements
+
+- Introduce Redis for distributed meeting state caching.
+- Add horizontal scaling for real-time services.
+- Implement AI-powered meeting transcription.
+- Add rate limiting and abuse detection.
+
+
