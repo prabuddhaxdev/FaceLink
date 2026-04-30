@@ -41,7 +41,7 @@ export const Features = () => {
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
             <span className="text-[#0FB563] font-semibold text-sm tracking-wider uppercase">Powerful Features</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Everything you need for <br/>
             <span className="text-[#0FB563]">perfect meetings</span>
           </h2>
@@ -52,12 +52,12 @@ export const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="p-8 rounded-3xl bg-dark-1 border border-white/5 hover:border-[#0FB563]/30 transition-all duration-300 hover:-translate-y-2 group hover:shadow-[0_10px_40px_rgba(15,181,99,0.1)] relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#0FB563]/5 rounded-full blur-[50px] group-hover:bg-[#0FB563]/10 transition-colors" />
-              
+
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-dark-3 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-[#0FB563] group-hover:border-[#0FB563] transition-all duration-300">
                   <feature.icon className="w-7 h-7 text-[#0FB563] group-hover:text-white transition-colors duration-300" />

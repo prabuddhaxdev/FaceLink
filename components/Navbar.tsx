@@ -32,14 +32,14 @@ const Navbar = () => {
                   href={link.route}
                   key={link.label}
                   className={cn(
-                    "flex items-center gap-2 text-sm font-medium transition-colors hover:text-[#0FB563]",
+                    "flex items-center gap-2 text-md font-semibold px-4 py-2 rounded-full transition-all duration-300",
                     {
-                      "text-[#0FB563]": isActive,
-                      "text-gray-300": !isActive,
+                      "bg-[#0FB563]/10 text-[#0FB563] shadow-[0_0_15px_rgba(15,181,99,0.15)]": isActive,
+                      "text-gray-300 hover:text-white hover:bg-white/5": !isActive,
                     }
                   )}
                 >
-                  <link.icon className="w-4 h-4" />
+                  <link.icon className={cn("w-[18px] h-[18px]", { "text-[#0FB563]": isActive, "text-gray-400": !isActive })} />
                   {link.label}
                 </Link>
               );
