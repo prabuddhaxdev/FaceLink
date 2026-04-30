@@ -21,16 +21,6 @@ const MeetingSetup = ({
     throw new Error("usecall must be used within StreamCall component");
   }
 
-  useEffect(() => {
-    if (isMicCamToggleOn) {
-      call?.camera.disable();
-      call?.microphone.disable();
-    } else {
-      call?.camera.enable();
-      call?.microphone.enable();
-    }
-  }, [isMicCamToggleOn, call?.camera, call?.microphone]);
-
   return (
     <section className="w-full h-screen flex flex-col items-center justify-center gap-3 text-white">
       <h1 className="font-bold text-2xl">Setup</h1>
@@ -40,7 +30,17 @@ const MeetingSetup = ({
           <input
             type="checkbox"
             checked={isMicCamToggleOn}
-            onChange={(e) => setIsMicCamToggleOn(e.target.checked)}
+            onChange={async (e) => {
+              const isChecked = e.target.checked;
+              setIsMicCamToggleOn(isChecked);
+              if (isChecked) {
+                await call?.camera.disable();
+                await call?.microphone.disable();
+              } else {
+                await call?.camera.enable();
+                await call?.microphone.enable();
+              }
+            }}
           />
           Join with mic and camera off
         </label>
