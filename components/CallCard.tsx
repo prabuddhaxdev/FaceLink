@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { Copy, LucideIcon } from "lucide-react";
+import { Check, Copy, LucideIcon } from "lucide-react";
 import toast from "react-hot-toast";
 
 interface CallCardProps {
@@ -27,6 +27,8 @@ const CallCard = ({
   isPreviousMeeting,
   buttonIcon1: ButtonIcon,
 }: CallCardProps) => {
+  const [copied, setCopied] = useState(false);
+
   return (
     <section className="w-full flex min-h-[258px] flex-col  justify-between rounded-[14px]  bg-dark-3 px-5 py-8">
       <article className="flex flex-col gap-5">
@@ -47,10 +49,10 @@ const CallCard = ({
           />
         </div>
         {!isPreviousMeeting && (
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Button
               onClick={handleClick}
-              className="rounded-md bg-green-1 hover:bg-green-1/80  px-6 "
+              className="bg-[#0FB563] hover:bg-[#0FB563]/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(15,181,99,0.4)] px-6 w-full sm:w-auto"
             >
               {ButtonIcon && <ButtonIcon size={20} />}
               &nbsp; {buttonText}
@@ -58,11 +60,21 @@ const CallCard = ({
             <Button
               onClick={() => {
                 navigator.clipboard.writeText(link);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
                 toast.success("Link copied!");
               }}
-              className="bg-[#252A41] hover:bg-[#252A41]/80  px-6"
+              className="bg-[#252A41] hover:bg-[#252A41]/80 transition-all duration-200 px-6 min-w-[140px] w-full sm:w-auto"
             >
-              <Copy className="size-4 mr-1" /> Copy Link
+              {copied ? (
+                <>
+                  <Check className="size-4 mr-2 text-green-400" /> Copied!
+                </>
+              ) : (
+                <>
+                  <Copy className="size-4 mr-2" /> Copy Link
+                </>
+              )}
             </Button>
           </div>
         )}

@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useGetCallById } from "@/hooks/useGetCallById";
 import { useUser } from "@clerk/nextjs";
 import { useStreamVideoClient } from "@stream-io/video-react-sdk";
-import { Copy, Loader } from "lucide-react";
+import { Check, Copy, Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -15,17 +16,18 @@ const Table = ({
   title: string;
   description: string;
 }) => (
-  <div className="flex flex-col xl:flex-row gap-2 items-start">
-    <h1 className="text-base font-base text-green-200 lg:text-lg xl:min-w-32">
+  <div className="flex flex-col md:flex-row gap-2 items-start md:items-center">
+    <h1 className="text-base font-base text-green-200 lg:text-lg md:min-w-32">
       {title}:
     </h1>
-    <p className="text-sm font-semibold truncate max-sm:w-[320px] lg:text-xl">
+    <p className="text-sm font-semibold break-all lg:text-xl">
       {description}
     </p>
   </div>
 );
 
 const MyRooms = () => {
+  const [copied, setCopied] = useState(false);
   const router = useRouter();
   const { user } = useUser();
   const meetingId = user?.id;
@@ -63,18 +65,31 @@ const MyRooms = () => {
         <Table title="Meeting ID" description={`${meetingId}`} />
         <Table title="Invite Link" description={`${meetingLink}`} />
       </div>
-      <div className="flex gap-5">
-        <Button className="bg-green-1 hover:bg-green-1/80" onClick={startRoom}>
+      <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+        <Button 
+          className="bg-[#0FB563] hover:bg-[#0FB563]/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(15,181,99,0.4)] w-full sm:w-auto" 
+          onClick={startRoom}
+        >
           Start Meeting
         </Button>
         <Button
-          className="bg-dark-3 hover:bg-dark-3/80"
+          className="bg-dark-3 hover:bg-dark-3/80 transition-all duration-200 min-w-[150px] w-full sm:w-auto"
           onClick={() => {
             navigator.clipboard.writeText(meetingLink);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
             toast.success("Link copied!");
           }}
         >
-          <Copy className="size-4 mr-1" /> Copy Invitation
+          {copied ? (
+            <>
+              <Check className="size-4 mr-2 text-green-400" /> Copied!
+            </>
+          ) : (
+            <>
+              <Copy className="size-4 mr-2" /> Copy Invitation
+            </>
+          )}
         </Button>
       </div>
     </section>

@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
     <section className="size-full flex flex-col gap-10 text-white">
       <div
-        className="w-full h-72 rounded-xl bg-cover"
+        className="w-full h-72 rounded-xl bg-cover bg-center"
         style={{ backgroundImage: "url('/banner.png')" }}
       >
         <article className="flex flex-col h-full justify-between max-md:px-5 max-md:py-8 lg:p-11">
