@@ -38,7 +38,13 @@ const CallCard = ({
       </article>
       <article className="flex justify-center relative">
         <div className="flex relative w-full max-sm:hidden">
-          <Image src={"/avatars.png"} alt="" width={150} height={40} />
+          <Image
+            src={"/avatar.jpg"}
+            alt=""
+            width={48}
+            height={48}
+            className="rounded-full object-cover border-2 border-white"
+          />
         </div>
         {!isPreviousMeeting && (
           <div className="flex gap-2 items-center">

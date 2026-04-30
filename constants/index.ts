@@ -8,7 +8,7 @@ import {
 
 export const sidebarLinks = [
   {
-    route: "/",
+    route: "/home",
     icon: Home,
     label: "Home",
   },
