@@ -17,7 +17,7 @@ const Table = ({
   description: string;
 }) => (
   <div className="flex flex-col md:flex-row gap-2 items-start md:items-center">
-    <h1 className="text-base font-base text-green-200 lg:text-lg md:min-w-32">
+    <h1 className="text-base font-base text-brand-light lg:text-lg md:min-w-32">
       {title}:
     </h1>
     <p className="text-sm font-semibold break-all lg:text-xl">
@@ -67,7 +67,7 @@ const MyRooms = () => {
       </div>
       <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
         <Button 
-          className="bg-[#0FB563] hover:bg-[#0FB563]/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(15,181,99,0.4)] w-full sm:w-auto" 
+          className="bg-brand hover:bg-brand/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(0,98,255,0.4)] w-full sm:w-auto" 
           onClick={startRoom}
         >
           Start Meeting
@@ -83,7 +83,7 @@ const MyRooms = () => {
         >
           {copied ? (
             <>
-              <Check className="size-4 mr-2 text-green-400" /> Copied!
+              <Check className="size-4 mr-2 text-brand-light" /> Copied!
             </>
           ) : (
             <>

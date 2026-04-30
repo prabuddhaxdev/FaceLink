@@ -45,7 +45,7 @@ const MeetingModal = ({
           <h1 className={cn("text-2xl font-semibold", className)}>{title}</h1>
           {children}
           <Button
-            className="bg-green-600 hover:bg-green-600/80 focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="bg-brand hover:bg-brand/80 focus-visible:ring-0 focus-visible:ring-offset-0"
             onClick={handleClick}
           >
             {Icon && <Icon className="size-3" />} &nbsp;

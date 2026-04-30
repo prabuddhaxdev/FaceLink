@@ -44,6 +44,8 @@
   --color-dark-3: #1A1B20;
   --color-dark-2: #202028;
   --color-dark-1: #21242B;
+  --color-brand: #0062ff;
+  --color-brand-light: #60a5fa;
 }
 
 :root {
@@ -145,7 +147,7 @@
   height: 40px;
 }
 .cl-dividerLine {
-  background: #0FB563;
+  background: var(--color-brand);
   height: 1px;
 }
 

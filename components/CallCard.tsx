@@ -52,7 +52,7 @@ const CallCard = ({
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Button
               onClick={handleClick}
-              className="bg-[#0FB563] hover:bg-[#0FB563]/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(15,181,99,0.4)] px-6 w-full sm:w-auto"
+              className="bg-brand hover:bg-brand/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(0,98,255,0.4)] px-6 w-full sm:w-auto"
             >
               {ButtonIcon && <ButtonIcon size={20} />}
               &nbsp; {buttonText}
@@ -68,7 +68,7 @@ const CallCard = ({
             >
               {copied ? (
                 <>
-                  <Check className="size-4 mr-2 text-green-400" /> Copied!
+                  <Check className="size-4 mr-2 text-brand-light" /> Copied!
                 </>
               ) : (
                 <>

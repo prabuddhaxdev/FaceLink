@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1 text-center md:text-left">
             <Link href="/" className="flex items-center justify-center md:justify-start gap-2 mb-6 group">
-              <div className="bg-[#0FB563] p-2 rounded-xl group-hover:scale-105 transition-transform">
+              <div className="bg-brand p-2 rounded-xl group-hover:scale-105 transition-transform">
                 <Video className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-white tracking-tight">FaceLink</span>
@@ -17,13 +17,13 @@ export const Footer = () => {
               Connect face to face with anyone, anywhere in the world. High-quality video conferencing for modern teams.
             </p>
             <div className="flex items-center justify-center md:justify-start gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0FB563] hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0FB563] hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0FB563] hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:-translate-y-1 text-gray-400 hover:text-white transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -32,29 +32,29 @@ export const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-lg">Product</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><Link href="#features" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Features</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Pricing</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Security</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Integrations</Link></li>
+              <li><Link href="#features" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Features</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Pricing</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Security</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Integrations</Link></li>
             </ul>
           </div>
           
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">About</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Careers</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Blog</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Contact</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">About</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Careers</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Blog</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Contact</Link></li>
             </ul>
           </div>
           
           <div className="text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-lg">Legal</h4>
             <ul className="space-y-4 text-gray-400">
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-[#0FB563] hover:translate-x-1 inline-block transition-transform">Cookie Policy</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Terms of Service</Link></li>
+              <li><Link href="#" className="hover:text-brand hover:translate-x-1 inline-block transition-transform">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
