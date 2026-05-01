@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Video } from "lucide-react";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Show, UserButton } from "@clerk/nextjs";
 
 export const Navbar = () => {
   return (
@@ -14,20 +14,20 @@ export const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-4">
-          <SignedOut>
+          <Show when="signed-out">
             <Link href="/sign-in" className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition">
               Log in
             </Link>
             <Link href="/sign-up" className="text-sm font-medium bg-brand hover:bg-brand/90 text-white px-5 py-2.5 rounded-full transition-all hover:shadow-[0_0_20px_rgba(0,98,255,0.4)]">
               Get Started
             </Link>
-          </SignedOut>
-          <SignedIn>
+          </Show>
+          <Show when="signed-in">
             <Link href="/home" className="text-sm font-medium text-gray-300 hover:text-white transition mr-4">
               Home
             </Link>
             <UserButton />
-          </SignedIn>
+          </Show>
         </div>
       </div>
     </nav>
