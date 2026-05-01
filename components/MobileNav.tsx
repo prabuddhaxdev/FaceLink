@@ -47,7 +47,7 @@ const MobileNav = () => {
                         className={cn(
                           "flex items-center gap-4 rounded-lg p-4 w-full max-w-60",
                           {
-                            "bg-brand": isActive,
+                            "bg-blue-500": isActive,
                           }
                         )}
                       >

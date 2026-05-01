@@ -34,12 +34,12 @@ const Navbar = () => {
                   className={cn(
                     "flex items-center gap-2 text-md font-semibold px-4 py-2 rounded-full transition-all duration-300",
                     {
-                      "bg-brand/10 text-brand shadow-[0_0_15px_rgba(0,98,255,0.15)]": isActive,
+                      "bg-brand/10 text-blue-400 shadow-[0_0_15px_rgba(0,98,255,0.15)]": isActive,
                       "text-gray-300 hover:text-white hover:bg-white/5": !isActive,
                     }
                   )}
                 >
-                  <link.icon className={cn("w-[18px] h-[18px]", { "text-brand": isActive, "text-gray-400": !isActive })} />
+                  <link.icon className={cn("w-[18px] h-[18px]", { "text-blue-400": isActive, "text-gray-400": !isActive })} />
                   {link.label}
                 </Link>
               );
