@@ -23,25 +23,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider
-        appearance={{
-          variables: {
-            colorText: "white",
-            colorBackground: "#21242B",
-            colorPrimary: "#0062ff",
-            colorInputBackground: "#21242D",
-            colorInputText: "#fff",
-          },
-          layout: {
-            logoImageUrl: "/logo.png",
-            socialButtonsVariant: "iconButton",
-          },
-        }}
-      >
-        <body className={`${inter.className} bg-dark-2`}>{children}
-          <Toaster/>
-        </body>
-      </ClerkProvider>
+      <body className={`${inter.className} bg-dark-2 `}>
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorPrimary: "#0062ff",
+              colorBackground: "#111827",
+              colorForeground: "#ffffff",
+              colorPrimaryForeground: "#ffffff",
+              colorMutedForeground: "#cbd5e1",
+              colorInputForeground: "#ffffff",
+              colorInput: "#1e293b",
+              colorNeutral: "#BDC1CC",
+              colorDanger: "#ef4444",
+              borderRadius: "14px",
+            },
+
+            layout: {
+              logoImageUrl: "/logo.png",
+              socialButtonsVariant: "iconButton",
+            },
+          }}
+        >
+          {children}
+
+          <Toaster />
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
