@@ -45,13 +45,16 @@ const MobileNav = () => {
                         href={link.route}
                         key={link.label}
                         className={cn(
-                          "flex items-center gap-4 rounded-lg p-4 w-full max-w-60",
-                          {
-                            "bg-blue-500": isActive,
-                          }
+                          "flex items-center gap-4 rounded-lg p-4 w-full max-w-60 transition-all duration-300",
+                          isActive
+                            ? "bg-brand text-white shadow-[0_0_20px_rgba(0,98,255,0.3)]"
+                            : "text-gray-300 hover:text-white hover:bg-white/5"
                         )}
                       >
-                        <link.icon />
+                        <link.icon className={cn("w-6 h-6", {
+                          "text-white": isActive,
+                          "text-gray-400": !isActive
+                        })} />
                         <p className="text-lg font-semibold">{link.label}</p>
                       </Link>
                     </SheetClose>

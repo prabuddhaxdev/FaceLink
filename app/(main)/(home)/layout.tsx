@@ -1,5 +1,6 @@
 
 import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 import { Metadata } from "next";
 import { ReactNode } from "react"
 
@@ -16,7 +17,8 @@ const HomeLayout = ({ children }: {children: ReactNode}) => {
     <main className="relative">
       <Navbar />
       <div className="flex">
-        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-20 max-md:pb-14 sm:px-14">
+        <Sidebar />
+        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-20 max-md:pb-14 sm:px-8">
           <div className="w-full">{children}</div>
         </section>
       </div>
