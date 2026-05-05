@@ -1,6 +1,7 @@
 # FaceLink
 
-<img width="1258" height="634" alt="facelink" src="https://github.com/user-attachments/assets/3bacceef-b409-4e23-a504-6e69195a1cee" />
+<img width="1265" height="675" alt="facelink" src="https://github.com/user-attachments/assets/901980d7-fcf9-43b2-b7a9-2a8a343520bf" />
+
 
 
 ##  🚀 Overview
