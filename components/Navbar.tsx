@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Video } from "lucide-react";
+import { sidebarLinks } from "@/constants";
 import {
   UserButton,
   SignInButton,
@@ -21,7 +22,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full px-6 lg:px-10 h-16">
 
         {/* Logo */}
-        <Link href={isSignedIn ? "/home" : "/"} className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="bg-brand p-2 rounded-xl group-hover:scale-105 transition-transform">
             <Video className="w-5 h-5 text-white" />
           </div>
@@ -29,6 +30,20 @@ const Navbar = () => {
             FaceLink
           </span>
         </Link>
+
+        {isSignedIn && pathname === "/" && (
+          <div className="hidden md:flex items-center gap-6 mx-auto">
+            {sidebarLinks.map((link) => (
+              <Link
+                key={link.route}
+                href={link.route}
+                className="text-md font-medium text-white/90 hover:text-blue-400 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
         {/* Right Actions */}
         <div className="flex items-center gap-4">
 
