@@ -22,7 +22,7 @@ const EndCallButton = () => {
     <Button
       onClick={async () => {
         await call.endCall();
-        router.push("/");
+        router.push("/home");
       }}
       className="bg-red-500 rounded-xl"
       variant={"default"}
