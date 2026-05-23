@@ -37,7 +37,7 @@ const MeetingRoom = () => {
 
   if (callingState !== CallingState.JOINED) return <Loader />;
 
-  const CallLayout = () => {
+  const renderCallLayout = () => {
     switch (layout) {
       case "grid":
         return <PaginatedGridLayout />;
@@ -52,11 +52,12 @@ const MeetingRoom = () => {
     <section className="relative h-screen w-full  overflow-hidden  pt-4 text-white">
       <div className="relative size-full flex  items-center justify-center">
         <div className="size-full flex max-w-[1000px]  items-center">
-          <CallLayout />
+          {renderCallLayout()}
         </div>
         <div
-          className={cn(" h-[calc(100vh-72px)] hidden ml-2", {
-            "show-block": showParticipants,
+          className={cn(" h-[calc(100vh-72px)] ml-2", {
+            "block": showParticipants,
+            "hidden": !showParticipants,
           })}
         >
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
