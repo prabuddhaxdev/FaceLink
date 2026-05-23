@@ -64,7 +64,7 @@ const MeetingRoom = () => {
         <div className="fixed bottom-0 w-full gap-5 flex items-center justify-center flex-wrap">
           <CallControls
             onLeave={() => {
-              router.push("/");
+              router.push("/home");
               toast.success("You have left from the meeting!");
             }}
           />
