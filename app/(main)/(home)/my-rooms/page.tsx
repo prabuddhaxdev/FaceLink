@@ -29,8 +29,9 @@ const Table = ({
 const MyRooms = () => {
   const [copied, setCopied] = useState(false);
   const router = useRouter();
-  const { user } = useUser();
+  const { user, isLoaded: isUserLoaded } = useUser();
   const meetingId = user?.id;
+  const displayName = user?.fullName || user?.username || user?.firstName || "Your";
 
   const client = useStreamVideoClient();
 
@@ -53,7 +54,7 @@ const MyRooms = () => {
     toast.success("meeting created!");
   };
 
-  if (isCallLoading)
+  if (isCallLoading || !isUserLoaded)
     return <Loader className="animate-spin size-6 text-white mt-5" />;
 
   return (
@@ -61,13 +62,13 @@ const MyRooms = () => {
       <h1 className="text-3xl font-bold">My Room</h1>
 
       <div className="w-full xl:max-w-[900px]  flex flex-col gap-8">
-        <Table title="Topic" description={`${user?.username}'s Meeting Room`} />
+        <Table title="Topic" description={`${displayName}'s Meeting Room`} />
         <Table title="Meeting ID" description={`${meetingId}`} />
         <Table title="Invite Link" description={`${meetingLink}`} />
       </div>
       <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-        <Button 
-          className="bg-brand hover:bg-brand/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(0,98,255,0.4)] w-full sm:w-auto" 
+        <Button
+          className="bg-brand hover:bg-brand/90 transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-[0_0_20px_rgba(0,98,255,0.4)] w-full sm:w-auto"
           onClick={startRoom}
         >
           Start Meeting
